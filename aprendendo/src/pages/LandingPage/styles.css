@@ -1,0 +1,171 @@
+#page-landing {
+    width: 100vw;
+    height: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+input{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+/*
+RIGHT
+RIGHT
+RIGHT
+*/
+
+
+#right {
+    height: 100vw;
+    width: 50vw;
+    background-color: var(--red-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#log-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 20vw;
+    width: 30vw;
+    border: 0.1rem solid var(--grey-dim);
+    border-radius: 2rem;
+}
+
+#Inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 10vw;
+    
+    
+}
+
+#Email {
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+    height: 8rem;
+    border: 0.2rem solid var(--grey-dim);
+    border-radius: 1rem;
+    margin: 2rem;
+    margin-top: 1rem;
+}
+
+#Email input {
+    width: 24vw;
+    margin-left:1rem;
+    border:none;
+    font-family: Noto Sans HK;
+}
+
+#Password {
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+    height: 8rem;
+    border: 0.2rem solid var(--grey-dim);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#Password input {
+    width: 24vw;
+    margin-left:1rem;
+    border:none;
+    font-family: Noto Sans HK;
+    
+}
+
+.newAccount {
+    position: absolute;
+    right:1rem;
+    top:1rem;
+    border: none;
+    width: 10vw;
+    height: 3vw;
+    background-color: #E42626;
+    border-radius: 1.5rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    
+}
+
+#Log-Forgot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LogIn {
+    border: 0.02rem solid;
+    width: 10vw;
+    height: 3vw;
+    background-color: var(--red-default);
+    border-radius: 1.5rem;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.LogIn button {
+    font-family: Noto Sans HK;
+}
+
+#Log-Forgot a {
+    margin-left: 3.5rem;
+    font-size: 12px;
+}
+
+/*
+LEFT
+LEFT
+LEFT
+*/
+
+#left {
+    height: 100vw;
+    width: 50vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pena img {
+    height: 5rem;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+
+.logo {
+    margin-bottom: 5rem;
+}
+
+.logo img {
+    height: 14rem;
+}
+
+.logo h2 {
+    padding-top: 0.5rem;
+    color: var(--grey-dim);
+    font-size: 1.8rem;
+}
