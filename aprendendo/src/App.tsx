@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Landing from './pages/LandingPage'
-
 import './assets/styles/global.css';
-
+import Routes from './routes';
 
 
 function App() {
   return (
-    <Landing />
+    <Routes />
   );
 }
 

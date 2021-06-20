@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LogoImg from '../../assets/images/PiupiuwerLogo.svg';
-import PenaImg from '../../assets/images/PenaLogo.svg';
+import LogoImg from '../../assets/images/LandingPage/PiupiuwerLogo.svg';
+import PenaImg from '../../assets/images/LandingPage/PenaLogo.svg';
 
 import './styles.css';
 
