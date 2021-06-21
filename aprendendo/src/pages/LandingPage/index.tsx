@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import LogoImg from '../../assets/images/LandingPage/PiupiuwerLogo.svg';
 import PenaImg from '../../assets/images/LandingPage/PenaLogo.svg';
 
 import './styles.css';
+import { useEffect } from 'react';
+import api from '../../api';
+import { useContext } from 'react';
+import { AuthContext, useAuth } from '../../hooks/useAuth';
+
+
 
 function Landing() {
+    const aaaa = useAuth();
+    const {user} = useAuth();
+
+    const [emailInput, setEmailInput] = useState<string>(""); 
+    const [passwordInput, setPasswordInput] = useState<string>(""); 
+
+    // setEmailInput(valor do input)
+
     return(
     <div id="page-landing">
         <div id="left">

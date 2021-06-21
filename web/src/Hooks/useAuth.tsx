@@ -1,4 +1,4 @@
-/*
+
 import React, {createContext, useCallback, useState} from 'react';
 
 import api from '../api';
@@ -40,5 +40,5 @@ export const useAuth = ():AuthContextData => {
 
     return context
 }
-*/
+
 	
