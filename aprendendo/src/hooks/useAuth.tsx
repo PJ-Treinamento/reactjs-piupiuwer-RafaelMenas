@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { Token } from 'typescript';
 import api from '../api';
 import { IUser } from '../models';
 
@@ -10,8 +11,7 @@ interface AuthState{
 interface AuthContextData {
     user: IUser,
     token: string,
-    login(cred: LoginCredentials): void,
-    logout():void 
+    login(cred: LoginCredentials): void
 }
 
 interface LoginCredentials {
@@ -27,10 +27,8 @@ export const AuthProvider: React.FC = ({ children }) => {
         const user = localStorage.getItem('@Project:user');
 
         if (user && token) {
-            api.defaults.headers.Authorization = `Bearer ${token}`;
-            return { user: JSON.parse(user), token };
+            return { token, user: JSON.parse(user) };
         }
-        
 
         return {} as AuthState;
   });
@@ -40,29 +38,17 @@ export const AuthProvider: React.FC = ({ children }) => {
           email,
           password,
       });
+      
 
       const { token, user } = response.data;
       localStorage.setItem('@Project:token', token);
       localStorage.setItem('@Project:user', JSON.stringify(user));
 
-      
-
       setUserData({ token, user });
-
     };
     
-
-    const logout = () => {
-        localStorage.removeItem('@Project:user');
-        localStorage.removeItem('@Project:token');
-    
-        setUserData({} as AuthState);
-    };
-    
-    
-
   return (
-    <AuthContext.Provider value={{logout,login, token: userData.token, user: userData.user}}> 
+    <AuthContext.Provider value={{login, token: userData.token, user: userData.user}}> 
         {children}
     </AuthContext.Provider>
   )

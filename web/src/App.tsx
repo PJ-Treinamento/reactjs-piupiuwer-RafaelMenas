@@ -1,12 +1,17 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
-// import Routes from './routes';
+import './assets/styles/global.css';
+import Routes from './routes/index';
+import { AuthProvider } from './hooks/useAuth';
 
-const App: React.FC = () => {
+function App() {
   return (
+    
     <BrowserRouter>
-       {/* <Routes /> */}
+      <AuthProvider>
+      <Routes />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

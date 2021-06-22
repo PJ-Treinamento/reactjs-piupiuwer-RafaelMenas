@@ -4,21 +4,21 @@ import LogoImg from '../../assets/images/LandingPage/PiupiuwerLogo.svg';
 import PenaImg from '../../assets/images/LandingPage/PenaLogo.svg';
 
 import './styles.css';
-import { useEffect } from 'react';
-import api from '../../api';
-import { useContext } from 'react';
-import { AuthContext, useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 
 
 
 function Landing() {
-    const aaaa = useAuth();
     const {user} = useAuth();
+    const {login} = useAuth();
+
+    console.log(user);
+
+    
+    
 
     const [emailInput, setEmailInput] = useState<string>(""); 
     const [passwordInput, setPasswordInput] = useState<string>(""); 
-
-    // setEmailInput(valor do input)
 
     return(
     <div id="page-landing">
@@ -34,17 +34,17 @@ function Landing() {
         <div id="right">
             <button className="newAccount">Create new account</button>
             <div id="log-in">
-                <div id="Inputs">
+                <form id="Inputs">
                     <div id="Email">
-                        <input type="text" placeholder="Email or username" className="email" />
+                        <input type="text" placeholder="Email or username" className="email" name="inputEmail" onChange={(e) => setEmailInput(e.target.value)} />
                     </div>
                     <div id="Password">
-                        <input type="text" placeholder="Password" className="password" />
+                        <input type="text" placeholder="Password" className="password" name="inputPassword" onChange={(e) => setPasswordInput(e.target.value)} />
                     </div>
-                </div>
+                </form>
                 <div id="Log-Forgot">
-                <button className="LogIn">Log in</button>
-                <a href="não tem link aqui não">Forgot your password?</a>
+                    <button id="Submit" className="LogIn" onClick={() => login({ email:emailInput, password:passwordInput})} >Log in</button>
+                    <a href="não tem link aqui não">Forgot your password?</a>
                 </div>
             </div>
         </div>
