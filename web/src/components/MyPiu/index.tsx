@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import api from '../../api';
 
 import PerfilImg from '../../assets/images/Feed/perfilIcon.svg'
 import { useAuth } from '../../hooks/useAuth';
+import { IChange, IPiu, ITextPiu } from '../../models';
 
 
 
-function Mypiu() {
+  const Mypiu = ({change}:IChange) => {
   const [textPiu, setTextPiu] = useState("");
   console.log(textPiu);
 
@@ -14,14 +16,16 @@ function Mypiu() {
 
   const {token} = useAuth();
 
-  const postPius = async () => {
-    const responsePius = await api.get('/pius', {
-      headers: {Authorization: `Bearer ${token}`}
+  const postPius = async ({text}:ITextPiu)  => {
+      await api.post('/pius', {
+      headers: {Authorization: `Bearer ${token}`}, 
+      text,
     })
-    setTextPiu(responsePius.data)
+    window.location.reload();
   }
-  
 
+  // onClick={() => postPius({text: textPost})}
+  
 
 
   return (
@@ -32,8 +36,9 @@ function Mypiu() {
         <p id="yourarroba">@pessoa</p>
       </div>
       <div className="text">
-        <textarea name="think" id="thinking" placeholder="aaaaa" onChange={(e) => setTextPiu(e.target.value)}></textarea>
-        <button >piu</button>
+        <textarea name="think" id="thinking" placeholder="aaaaa" onChange={(e) => setTextPost(e.target.value)}></textarea>
+        <p>{textPost.length}</p>
+        <button onClick={() => postPius({text: textPost})} >piu</button>
       </div>
     </div>
   );

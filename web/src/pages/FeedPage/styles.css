@@ -20,6 +20,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 1;
 }
 
 .logopiu {
@@ -137,7 +138,6 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;  
-     
 }
 
 .perfilrandomimg {
@@ -154,7 +154,6 @@
     align-items: center;
     flex-direction: column;
     margin-top:5rem;
-    border: 1px solid;
     width: 80%;
     height: 100%;
     

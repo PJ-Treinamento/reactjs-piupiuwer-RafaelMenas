@@ -30,3 +30,11 @@ export interface IPiuLike {
 	user: IUser;
 	piu: IPiu;
 }
+
+export interface ITextPiu {
+	text: string
+}
+
+export interface IChange {
+	change: (text:string) => void
+}

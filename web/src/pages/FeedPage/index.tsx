@@ -43,7 +43,26 @@ function Feed() {
   //   getUsers();
   // }, []) 
 
+  const {user} = useAuth();
+  
 
+  const [aaaa, setAaaa] = useState("");
+
+  const {token} = useAuth();
+  const [pius, setPius] = useState<IPiu[]>([])
+
+  const getPius = async () => {
+    const responsePius = await api.get('/pius', {
+      headers: {Authorization: `Bearer ${token}`}
+    })
+    setPius(responsePius.data)
+  }
+  
+
+  useEffect (() => {
+    getPius();
+  }, []) 
+  
   return (
     <div id="page-feed">
       <PageHeader />
@@ -52,9 +71,12 @@ function Feed() {
         <section id="middle-feed">
           <div id="everypiu">
             <div id="pius">
-                <Mypiu />
-                <div id="greybar"></div>
-                <Otherpius />
+                <Mypiu change={setAaaa}/>
+                  <div id="greybar"></div> 
+                  {/* {
+                    (aaaa!=="") && <Otherpius {...} />
+                  } */}
+                {pius.map((piu) => <Otherpius {...piu} />)}
             </div>
           </div>
         </section>

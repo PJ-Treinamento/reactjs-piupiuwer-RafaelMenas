@@ -6,78 +6,43 @@ import Replie from "../../assets/images/Feed/replieIcon.svg";
 
 import { useAuth } from "../../hooks/useAuth";
 import api from "../../api";
-import { IPiu, IUser } from "../../models";
+import { IPiu, ITextPiu, IUser } from "../../models";
 // import { useAuth } from "../../hooks/useAuth";
 // import { IPiu, IUser } from "../../models";
 // import api from "../../api";
 
-function Otherpius() {
+interface IIdPiu {
+  piu_id: string
+}
 
+
+
+const Otherpius: React.FC<IPiu> = ({user, likes, text, id}) => {
+  
   const {token} = useAuth();
-  const [pius, setPius] = useState<IPiu[]>([])
-
-  const getPius = async () => {
-    const responsePius = await api.get('/pius', {
-      headers: {Authorization: `Bearer ${token}`}
+  
+  const deletePiu = async (piu_id:string) => {
+    await api.delete('/pius', {
+      headers: {Authorization: `Bearer ${token}`}, 
+      data: {
+        piu_id
+      }
     })
-    setPius(responsePius.data)
+    window.location.reload();
   }
-  console.log(pius);
 
-  const [users, setUsers] = useState<IUser[]>([])
-
-  const getUsers = async () => {
-    const responseUsers = await api.get('/users', {
-      headers: {Authorization: `Bearer ${token}`}
-    })
-    setUsers(responseUsers.data)
-  }
-  console.log(users);
-
-  useEffect (() =>{
-    getPius();
-  }, []) 
-
-  useEffect (() =>{
-    getUsers();
-  }, []) 
-
-  // const textPiu = pius.map(
-  //   function A(piu) {
-  //     return <p className="piuanswer">{piu.text}</p>
-  //   }
-  // ); 
-
-  // const userPiu = users.map(
-  //   function A(piu) {
-  //     return <p  className="name">{piu.username}</p>
-  //   }
-  // ); 
-
-  // const photoPiu = users.map(
-  //   function A(piu) {
-  //     <img
-  //         src={piu.photo}
-  //         alt="imagem de perfil"
-  //         className="perfilrandomimg"
-  //       />
-  //   }
-  // ); 
-
-  const Otherspiu = pius.map (
-    function newPius(piu) {
-      return( 
+  return( 
         <div id="otherpius">
-      <div className="principal">
+        <div className="principal">
         <img
-          src={piu.user.photo}
+          src={user.photo}
           alt="imagem de perfil"
           className="perfilrandomimg"
         />
-        <p className="name">{piu.user.first_name}</p> <p className="arroba">{piu.user.username}</p>
+        <p className="name">{user.first_name}</p> <p className="arroba">{user.username}</p>
       </div>
       <div className="piurandom">
-        <p>{piu.text}</p>
+        <p className="piuTexto">{text}</p>
         <div className="reactions">
           <div className="replie">
             <img src={Replie} alt="Replie" />
@@ -89,25 +54,13 @@ function Otherpius() {
           </div>
           <div className="like">
             <img src={Like} alt="Like" />
-            <p>100</p>
+            <p>{likes.length}</p>
           </div>
+          <button onClick={() => deletePiu(id)}>Apagar</button>
         </div>
       </div>
     </div>
       )
     }
-  )
-
-
-
-
-  return (
-
-    <section>
-    {Otherspiu}
-    </section>
-    
-  );
-}
 
 export default Otherpius;

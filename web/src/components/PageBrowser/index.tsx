@@ -33,7 +33,7 @@ function PageBrowser () {
                     <p>More tools</p>
                 </div>
             </div>
-            <button onClick={() => logout()} id="writepiu">Write your piu</button>
+            <button onClick={() => logout()} id="writepiu">log out</button>
         </section> 
     );
 }
