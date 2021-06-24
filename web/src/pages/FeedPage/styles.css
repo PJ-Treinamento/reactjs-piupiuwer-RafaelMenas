@@ -29,7 +29,9 @@
 }
 
 .perfil {
-    margin-right: 2rem;
+    margin-right: 3rem;
+    width: 9rem;
+    border-radius: 5rem;
 }
 
 
@@ -178,6 +180,11 @@
     border: 1px solid;
 }
 
+#mypiu img {
+    width: 8rem;
+    border-radius: 5rem;
+}
+
 #questionpiu {
     margin-right:45%;
 
@@ -263,10 +270,6 @@
     margin-right: 2rem;
 }
 
-.like {
-    display:flex;
-
-}
 /*
 *Left
 *Left

@@ -48,7 +48,7 @@ export const AuthProvider: React.FC = ({ children }) => {
       
 
       setUserData({ token, user });
-
+      
     };
     
 

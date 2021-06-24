@@ -76,7 +76,7 @@ function Feed() {
                   {/* {
                     (aaaa!=="") && <Otherpius {...} />
                   } */}
-                {pius.map((piu) => <Otherpius {...piu} />)}
+                {pius.map((piu) => <Otherpius key={piu.id} {...piu} />)}
             </div>
           </div>
         </section>
