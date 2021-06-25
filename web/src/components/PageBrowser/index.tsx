@@ -1,41 +1,55 @@
-import React from 'react';
+import Home from "../../assets/images/Feed/homeIcon.svg";
+import Explore from "../../assets/images/Feed/exploreIcon.svg";
+import Notifications from "../../assets/images/Feed/notificIcon.svg";
+import Messages from "../../assets/images/Feed/messageIcon.svg";
+import MoreTools from "../../assets/images/Feed/otheroptIcon.svg";
 
-import Home from '../../assets/images/Feed/homeIcon.svg'
-import Explore from '../../assets/images/Feed/exploreIcon.svg'
-import Notifications from '../../assets/images/Feed/notificIcon.svg'
-import Messages from '../../assets/images/Feed/messageIcon.svg'
-import MoreTools from '../../assets/images/Feed/otheroptIcon.svg'
-import { useAuth } from '../../hooks/useAuth';
+import * as S from "./styles";
 
-function PageBrowser () {
+import { useAuth } from "../../hooks/useAuth";
 
-    const {logout} = useAuth();
+function PageBrowser() {
+  const { logout } = useAuth();
 
-    return(
-    <section id="left-feed">
-            <div className="tools">
-                <div className="icontext" id="home">
-                    <img src={Home} alt="Icone de casa" /> <p>Home</p>
-                </div>
-                <div className="icontext" id="explore">
-                    <img src={Explore} alt="Icone de exploração" /><p>Explore</p>
-                </div>
-                <div className="icontext" id="notifications">
-                    <img src={Notifications} alt="Icone de notificação" />
-                    <p>Notifications</p>
-                </div>
-                <div className="icontext" id="messages">
-                    <img src={Messages} alt="Icone de mensagem" />
-                    <p>Messages</p>
-                </div>
-                <div className="icontext" id="moretools">
-                    <img src={MoreTools} alt="Icone de mais ferramentas" />
-                    <p>More tools</p>
-                </div>
-            </div>
-            <button onClick={() => logout()} id="writepiu">log out</button>
-        </section> 
-    );
+  return (
+    <S.Browser>
+      <S.ToolsWrapper>
+        <S.IconWrapper>
+          <S.IconHomeWrapper>
+            <img src={Home} alt="Icone de casa" /> 
+            <p>Home</p>
+          </S.IconHomeWrapper>
+        </S.IconWrapper>
+        <S.IconWrapper>
+          <S.IconExploreWrapper>
+            <img src={Explore} alt="Icone de exploração" />
+            <p>Explore</p>
+          </S.IconExploreWrapper>
+        </S.IconWrapper>
+        <S.IconWrapper>
+          <S.IconNotificationsWrapper>
+            <img src={Notifications} alt="Icone de notificação" />
+            <p>Notifications</p>
+          </S.IconNotificationsWrapper>
+        </S.IconWrapper>
+        <S.IconWrapper>
+          <S.IconMessagesWrapper>
+            <img src={Messages} alt="Icone de mensagem" />
+            <p>Messages</p>
+          </S.IconMessagesWrapper>
+        </S.IconWrapper>
+        <S.IconWrapper>
+          <S.IconMoreToolsWrapper>
+            <img src={MoreTools} alt="Icone de mais ferramentas" />
+            <p>More tools</p>
+          </S.IconMoreToolsWrapper>
+        </S.IconWrapper>
+      </S.ToolsWrapper>
+      <S.LogOut onClick={() => logout()}>
+        Log out
+      </S.LogOut>
+    </S.Browser>
+  );
 }
 
 export default PageBrowser;

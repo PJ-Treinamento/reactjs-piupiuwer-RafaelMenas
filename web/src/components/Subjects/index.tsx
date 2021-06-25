@@ -1,40 +1,47 @@
-import React from 'react';
-
 import PenaImg from "../../assets/images/LandingPage/PenaLogo.svg";
-import PerfilImg from '../../assets/images/Feed/perfilIcon.svg'
+import PerfilImg from "../../assets/images/Feed/perfilIcon.svg";
 
-function Subjects (){
-    return( 
-        <section id="right-feed">
-          <img src={PenaImg} alt="Pena" id="penafeed" />
-          <div id="boxes">
-            <div id="subject">
-              <div id="subject-box">
-                <h3>Top subjects</h3>
-                <div id="infos">
-                  <div id="infotext">
-                    <p>aaaaaaaaaaaaaaaaaa</p>
-                    <p>bbbbbbbbbbbbbbbbbb</p>
-                    <p>cccccccccccccccccc</p>
-                  </div>
-                  <p>read more</p>
-                </div>
-              </div>
-            </div>
-            <div id="peoples">
-              <div id="people-box">
-                <h3>People you may know</h3>
-                <div className="someone">
-                  <img src={PerfilImg} alt="perfil" />
-                  <p>name someone</p>
-                  <button>follow</button>
-                </div>
-                <p>view more</p>
-              </div>
-            </div>
-          </div>
-        </section>
-    )
+import * as S from "./styles";
+
+function Subjects() {
+  return (
+    <S.SubjectsWrapper>
+      <S.PenaIcon src={PenaImg} alt="Pena" id="penafeed" />
+      <S.BoxesWrapper>
+        <S.TrendingSubjectsWrapper>
+          <S.TrendingSubjectsBox>
+            <h3>Top subjects</h3>
+            <S.Subjects>
+              <S.TextSubjectsWrapper>
+                <p>aaaaaaaaaaaaaaaaaa</p>
+                <p>bbbbbbbbbbbbbbbbbb</p>
+                <p>cccccccccccccccccc</p>
+              </S.TextSubjectsWrapper>
+              <S.ReadMore>read more</S.ReadMore>
+            </S.Subjects>
+          </S.TrendingSubjectsBox>
+        </S.TrendingSubjectsWrapper>
+        <S.FollowWrapper>
+          <S.FollowBox>
+            <h3>People you may know</h3>
+            <S.RandomPeoples>
+              <S.People>
+              <S.PerfilPhoto src={PerfilImg} alt="perfil" />
+              <p>name someone</p>
+              <button>follow</button>
+              </S.People>
+              <S.People>
+              <S.PerfilPhoto src={PerfilImg} alt="perfil" />
+              <p>name someone</p>
+              <button>follow</button>
+              </S.People>
+            </S.RandomPeoples>
+            <S.ViewMore>view more</S.ViewMore>
+          </S.FollowBox>
+        </S.FollowWrapper>
+      </S.BoxesWrapper>
+    </S.SubjectsWrapper>
+  );
 }
 
 export default Subjects;

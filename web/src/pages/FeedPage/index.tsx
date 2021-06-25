@@ -8,75 +8,48 @@ import Mypiu from "../../components/MyPiu";
 import Otherpius from "../../components/OtherPius";
 import Subjects from "../../components/Subjects";
 import { useAuth } from "../../hooks/useAuth";
-import { IPiu, IUser } from '../../models'
+import { IPiu } from "../../models";
 import api from "../../api";
 import { useEffect } from "react";
 
-function Feed() {  
-  
-  // const {token} = useAuth();
-  // const [pius, setPius] = useState<IPiu[]>([])
+function Feed() {
+  const { token, user } = useAuth();
 
-  // const getPius = async () => {
-  //   const responsePius = await api.get('/pius', {
-  //     headers: {Authorization: `Bearer ${token}`}
-  //   })
-  //   setPius(responsePius.data)
-  // }
-  // console.log(pius);
+  const [pius, setPius] = useState<IPiu[]>([]);
 
-  // const [users, setUsers] = useState<IUser[]>([])
-
-  // const getUsers = async () => {
-  //   const responseUsers = await api.get('/users', {
-  //     headers: {Authorization: `Bearer ${token}`}
-  //   })
-  //   setUsers(responseUsers.data)
-  // }
-  // console.log(users);
-
-  // useEffect (() =>{
-  //   getPius();
-  // }, []) 
-  
-  // useEffect (() =>{
-  //   getUsers();
-  // }, []) 
-
-  const {user} = useAuth();
-  
-
-  const [aaaa, setAaaa] = useState("");
-
-  const {token} = useAuth();
-  const [pius, setPius] = useState<IPiu[]>([])
-
-  const getPius = async () => {
-    const responsePius = await api.get('/pius', {
-      headers: {Authorization: `Bearer ${token}`}
-    })
-    setPius(responsePius.data)
-  }
-  
-
-  useEffect (() => {
+  useEffect(() => {
+    const getPius = async () => {
+      const responsePius = await api.get("/pius", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setPius(responsePius.data);
+    };
     getPius();
-  }, []) 
-  
+  }, [token]);
+
+  const [search, setSearch] = useState("");
+
   return (
     <div id="page-feed">
+      <div className="Header">
       <PageHeader />
-      <PageBrowser />
+      <input className="input"
+      placeholder="Search your piu..." type="text" onChange={(e) => setSearch(e.target.value)} />
+      </div>
       <div id="underhead-feed">
+        <PageBrowser />
         <section id="middle-feed">
           <div id="everypiu">
             <div id="pius">
-                <Mypiu change={setAaaa}/>
-                  <div id="greybar"></div> 
-                  {/* {
-                    (aaaa!=="") && <Otherpius {...} />
-                  } */}
-                {pius.map((piu) => <Otherpius key={piu.id} {...piu} />)}
+              <Mypiu />
+              <div id="greybar"></div>
+              {pius.map((piu) => { if( search === '' 
+              || piu.user.username.toLowerCase().includes(search.toLowerCase()) 
+              || piu.user.last_name.toLowerCase().includes(search.toLowerCase()) 
+              || piu.user.first_name.toLowerCase().includes(search.toLowerCase()) ) 
+              { return(
+                <Otherpius key={piu.id} {...piu} /> )
+}})}
             </div>
           </div>
         </section>

@@ -4,64 +4,6 @@
 }
 
 /*
-*HEAD
-*HEAD
-*HEAD
-*HEAD
-*HEAD
-*/
-
-#head {
-    width: 100vw;
-    height: 12vh;
-    background-color: #EFEFEF;
-    display: flex;
-    flex: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-}
-
-.logopiu {
-    height: 5rem;
-    margin-left: 2rem;
-}
-
-.perfil {
-    margin-right: 3rem;
-    width: 9rem;
-    border-radius: 5rem;
-}
-
-
-.search {
-    display: flex;
-    justify-content: space-between;
-    width: 50rem;
-    height: 5rem;
-    background-color: white;
-    border-radius: 1rem;
-    margin-left: 12rem;
-}
-
-.find {
-    margin-left: 1rem;
-    width: 40rem;
-}
-
-.lupa {
-    margin-top:0.5rem;
-    margin-right: 1rem;
-    height: 4rem;
-}
-
-.trendingtopics img {
-    margin: 1rem;
-    
-}
-
-/*
 *UNDERHEAD
 *UNDERHEAD
 *UNDERHEAD
@@ -75,54 +17,34 @@
     align-items: center;
 }
 
-/*
-*Right
-*Right
-*Right
-*/
-
-#right-feed {
-
-    width: 30vw;
-    height: 88vh;
-    position: absolute;
-    right:0rem; 
-    top: 12vh;
-    position: fixed;
-    
+.Header {
+   z-index:1;
+   position: fixed;
 }
 
-#penafeed {
-    height: 5rem;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-
+.input {
+    width: 40rem;
+    position: relative;
+    left: 77rem;
+    bottom: 7.5rem;
 }
 
-#boxes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+/* export const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 50rem;
+  height: 5rem;
+  background-color: white;
+  border-radius: 1rem;
+  margin-left: 12rem;
+`;
 
-#subject {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 15rem;
-    border: 3px solid var(--red-default);
-    width: 60%;
-    height: 30rem;
-    border-radius: 2rem;
 
-}
-
-#subject-box {
-    margin: 3rem;
-}
-
+export const LupaIcon = styled.img`
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+  height: 4rem;
+`; */
 /*
 *Middle
 *Middle
@@ -142,14 +64,6 @@
     flex-direction: column;  
 }
 
-.perfilrandomimg {
-
-    object-fit: cover;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-}
-
 #everypiu {
     display: flex;
     justify-content: space-between;
@@ -167,62 +81,6 @@
     width: 90%;
 }
 
-#mypiu {
-    display:flex;
-    flex-direction: column;
-    border: 1px solid;
-}
-
-.principal{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid;
-}
-
-#mypiu img {
-    width: 8rem;
-    border-radius: 5rem;
-}
-
-#questionpiu {
-    margin-right:45%;
-
-}
-
-#yourarroba {
-    margin-right: 1rem;
-    margin-top: 5rem;
-
-}
-
-.principal img{
-    margin: 1rem;
-}
-
-.text {
-    display:flex;
-    flex-direction: column;
-    height: 16rem;
-}
-
-.text button {
-    width: 10rem;
-    height: 5rem;
-    margin-left: 82%;
-    margin-top: 4rem;
-   
-}
-
-.text textarea {
-    width: 95%;
-    border:none;
-    resize: none;
-    outline: none;
-    margin-left: 1rem;
-    margin-top: 1rem;
-}
-
 #greybar {
     width: 100%;
     height: 2rem;
@@ -230,93 +88,3 @@
     border:none;
 }
 
-#otherpius{
-    display: flex;
-    flex-direction: column;
-}
-
-.name {
-    margin-right: 55%;
-}
-
-.arroba {
-    margin-right: 1rem;
-    margin-top: 4rem;
-}
-
-.piuanswer {
-    height: 10rem;
-    margin:1rem;
-}
-
-.reactions {
-    display: flex;
-    margin: 1rem;
-}
-
-.reactions img {
-    margin-right: 1rem;
-}
-
-.replie {
-    display:flex;
-    margin-right: 2rem;
-}
-
-
-
-.repiu {
-    display:flex;
-    margin-right: 2rem;
-}
-
-/*
-*Left
-*Left
-*Left
-*/
-
-#left-feed {
-    width: 20vw;
-    height: 88vh;
-    position: absolute;
-    left:0rem; 
-    top: 12vh;
-    border: 0.1rem solid ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-}
-
-.tools {
-    margin: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 0.1rem solid ;
-}
-
-.tools img {
-    margin-right: 3rem;
-}
-
-.icontext {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-}
-
-#writepiu {
-    margin-bottom: 10rem;
-    height: 10rem;
-    width: 26rem;
-    background-color: var(--red-default);
-    border:0.1rem solid; 
-    border-radius: 2rem;
-    
-
-}
