@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import * as S from './styles'
+import * as S from "./styles";
 
 import LogoImg from "../../assets/images/LandingPage/PiupiuwerLogo.svg";
 import LupaImg from "../../assets/images/Feed/lupeIcon.svg";
@@ -10,11 +10,13 @@ import { useAuth } from "../../hooks/useAuth";
 import { IPiu } from "../../models";
 import api from "../../api";
 
+export interface Search {
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  search: string;
+}
 
-const PageHeader = () => {
+const PageHeader: React.FC<Search> = ({setSearch, search}) => {
   const { user: User, token } = useAuth();
-
-  const [search, setSearch] = useState("");
 
   const [pius, setPius] = useState<IPiu[]>([]);
 
@@ -28,13 +30,15 @@ const PageHeader = () => {
     getPius();
   }, [token]);
 
-  // pius.user.username.filter
-  
-
   return (
     <S.HeadWrapper>
       <S.Logo src={LogoImg} alt="Logo Piupiuwer" className="logopiu" />
       <S.SearchWrapper>
+        <S.InputSearch
+          placeholder="Search your piu..."
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <S.LupaIcon src={LupaImg} alt="Logo Piupiuwer" />
       </S.SearchWrapper>
       <S.TrendingTopicsWrapper>

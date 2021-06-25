@@ -41,15 +41,18 @@ export const TextPiuWrapper = styled.div`
     outline: none;
     margin-left: 1rem;
     margin-top: 1rem;
+    font-family: Belgrano;
   }
 `;
 
 export const Question = styled.p`
-  margin-right: 45%;
+  margin-right: 52%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
 export const Arroba = styled.p`
   margin-right: 45%;
   margin-right: 1rem;
   margin-top: 5rem;
+  font-family: Belgrano;
 `;

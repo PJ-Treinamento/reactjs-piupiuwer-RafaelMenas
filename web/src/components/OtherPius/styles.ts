@@ -19,12 +19,14 @@ export const PrincipalWrapper = styled.div`
 `;
 
 export const FirstName = styled.p`
-  margin-right: 58rem;
+  margin-right: 56rem;
+  font-size: Belgrano;
 `;
 
 export const Arroba = styled.p`
-  margin-right: 1rem;
+  margin-right: 2rem;
   margin-top: 4rem;
+  font-size: Belgrano;
 `;
 export const PiuTextWrapper = styled.div`
   display: flex;
@@ -34,6 +36,7 @@ export const Text = styled.p`
   font-size: 2rem;
   height: 12rem;
   margin: 2rem 0 0 2rem;
+  font-size: Belgrano;
 `;
 export const InterationsWrapper = styled.div`
   display: flex;
@@ -43,7 +46,7 @@ export const InterationsWrapper = styled.div`
     font-size: 2rem;
   }
   input {
-      padding: -40rem;
+    padding: -40rem;
   }
 `;
 export const ReplieWrapper = styled.div`
@@ -51,39 +54,40 @@ export const ReplieWrapper = styled.div`
   margin-right: -27rem;
   padding-right: 5rem;
   p {
-      margin-left: 1rem;
+    margin-left: 1rem;
+    font-size: Belgrano;
   }
-
 `;
 export const RepiuWrapper = styled.div`
   display: flex;
   margin-right: -22rem;
   img {
-      height: 3rem;
+    height: 3rem;
   }
 `;
 export const LikeWrapper = styled.div`
   display: flex;
   img {
-      height: 3rem;
+    height: 3rem;
   }
-  p{
-      margin-left: 1rem;
+  p {
+    margin-left: 1rem;
+    font-size: Belgrano;
   }
 `;
 
 export const Buttons = styled.div`
-    display: flex;
-    button {
-        color: white;
-        height: 3rem;
-        width: 9rem;
-        margin: 1rem;
-        background-color: var(--red-default);
-        border-radius: 3rem;
-        cursor:pointer;
-    }
-`
-export const DeletePiu = styled.button<{delete: boolean}>`
-    display:${props => props.delete? 'initial':'none'}
-`
+  display: flex;
+  button {
+    color: white;
+    height: 3rem;
+    width: 9rem;
+    margin: 1rem;
+    background-color: var(--red-default);
+    border-radius: 3rem;
+    cursor: pointer;
+  }
+`;
+export const DeletePiu = styled.button<{ delete: boolean }>`
+  display: ${(props) => (props.delete ? "initial" : "none")};
+`;

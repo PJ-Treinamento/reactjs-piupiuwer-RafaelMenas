@@ -32,9 +32,7 @@ function Feed() {
   return (
     <div id="page-feed">
       <div className="Header">
-      <PageHeader />
-      <input className="input"
-      placeholder="Search your piu..." type="text" onChange={(e) => setSearch(e.target.value)} />
+      <PageHeader search={search} setSearch={setSearch} />
       </div>
       <div id="underhead-feed">
         <PageBrowser />

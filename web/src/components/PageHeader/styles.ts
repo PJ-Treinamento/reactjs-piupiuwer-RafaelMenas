@@ -31,13 +31,13 @@ export const SearchWrapper = styled.div`
 `;
 
 export const InputSearch = styled.input`
-  margin-left: 1rem;
+  margin-left: 2rem;
   width: 40rem;
 `;
 
 export const LupaIcon = styled.img`
   margin-top: 0.5rem;
-  margin-left: 45rem;
+  margin-right: 1rem;
   height: 4rem;
   cursor:pointer;
 `;

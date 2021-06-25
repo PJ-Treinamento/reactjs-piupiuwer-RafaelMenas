@@ -117,4 +117,5 @@ export const People = styled.div`
 
 export const ViewMore = styled.p`
     margin: 1rem 0 0 12rem;
+    color: red;
 `;
