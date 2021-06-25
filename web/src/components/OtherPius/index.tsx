@@ -146,8 +146,10 @@ const Otherpius: React.FC<IPiu> = ({ user, likes, text, id }) => {
   return (
     <S.OtherPiusWrapper>
       <S.PrincipalWrapper>
+        <div>
         <img src={user.photo} alt="imagem de perfil" />
         <S.FirstName>{user.first_name}</S.FirstName>
+        </div>
         <S.Arroba>{"@" + user.username}</S.Arroba>
       </S.PrincipalWrapper>
       <S.PiuTextWrapper>

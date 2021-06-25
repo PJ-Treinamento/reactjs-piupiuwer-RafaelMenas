@@ -9,17 +9,22 @@ export const PrincipalWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   img {
     object-fit: cover;
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
-    margin: 1.5rem;
+    margin: 1.5rem 1rem 1.5rem 1.5rem;
   }
 `;
 
 export const FirstName = styled.p`
-  margin-right: 56rem;
+  margin-right: 45rem;
   font-size: Belgrano;
 `;
 
